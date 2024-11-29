@@ -1,0 +1,83 @@
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Ajustes generales */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.banner {
+    background-image: url('irrigation-project.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #333;
+}
+
+.feature-item {
+    margin-top: 20px;
+}
+
+.full-width-image {
+    width: 100%; /* Contenedor al ancho completo */
+    height: 600px; /* Aumento la altura del contenedor */
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Oculta cualquier desbordamiento */
+}
+
+.full-width-image img {
+    width: 100%; /* Imagen al ancho completo */
+    height: 100%; /* Ajusta la altura al 100% del contenedor */
+    object-fit: cover; /* Rellena el contenedor sin deformar la imagen */
+    display: block; /* Evita espacios adicionales */
+}
+
+.small-image {
+    width: 80%; /* Ajusta el tamaño de la imagen al 80% del contenedor */
+    max-width: 250px; /* Limita el tamaño máximo de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Elimina cualquier espacio en blanco debajo de la imagen */
+    margin: 0 auto; /* Centra la imagen */
+}
+
+.image-container {
+    display: flex; /* Alinea las imágenes horizontalmente */
+    justify-content: space-between; /* Espacio entre las imágenes */
+    gap: 10px; /* Espacio entre las imágenes */
+}
+
+.image-container img {
+    width: 300px; /* Establece el tamaño de las imágenes */
+    height: auto; /* Mantiene la proporción de las imágenes */
+    display: block; /* Elimina el espacio blanco debajo de las imágenes */
+}
+
+footer {
+    margin-bottom: 0; /* Elimina el margen inferior del footer */
+    padding-bottom: 0; /* Elimina el padding extra si lo hay */
+}
+
+footer i {
+    vertical-align: middle; /* Alinea los iconos verticalmente */
+}
+
+footer .text-white {
+    text-decoration: none; /* Elimina subrayado de los enlaces */
+}
+
+footer div {
+    margin-top: 10px; /* Espacio entre el texto y los iconos */
+}
