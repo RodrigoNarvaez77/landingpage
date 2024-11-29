@@ -17,6 +17,8 @@
 /* Ajustes generales */
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .banner {
@@ -24,12 +26,15 @@ body {
     background-size: cover;
     background-position: center;
     color: #333;
+    padding: 60px 20px; /* Añadido padding para un mejor espaciado */
+    text-align: center;
 }
 
 .feature-item {
     margin-top: 20px;
 }
 
+/* Imagen de fondo */
 .full-width-image {
     width: 100%; /* Contenedor al ancho completo */
     height: 600px; /* Aumento la altura del contenedor */
@@ -45,6 +50,7 @@ body {
     display: block; /* Evita espacios adicionales */
 }
 
+/* Ajuste de imagen pequeña */
 .small-image {
     width: 80%; /* Ajusta el tamaño de la imagen al 80% del contenedor */
     max-width: 250px; /* Limita el tamaño máximo de la imagen */
@@ -53,25 +59,34 @@ body {
     margin: 0 auto; /* Centra la imagen */
 }
 
+/* Contenedor de imágenes */
 .image-container {
     display: flex; /* Alinea las imágenes horizontalmente */
     justify-content: space-between; /* Espacio entre las imágenes */
     gap: 10px; /* Espacio entre las imágenes */
+    flex-wrap: wrap; /* Permite que las imágenes se acomoden en filas en pantallas pequeñas */
 }
 
 .image-container img {
     width: 300px; /* Establece el tamaño de las imágenes */
     height: auto; /* Mantiene la proporción de las imágenes */
     display: block; /* Elimina el espacio blanco debajo de las imágenes */
+    margin: 0 auto; /* Centra las imágenes */
 }
 
+/* Footer */
 footer {
-    margin-bottom: 0; /* Elimina el margen inferior del footer */
-    padding-bottom: 0; /* Elimina el padding extra si lo hay */
+    background-color: #333; /* Fondo oscuro para el footer */
+    color: white;
+    text-align: center; 
+    padding: 20px;
+    margin-top: 40px; /* Espacio superior */
 }
 
 footer i {
     vertical-align: middle; /* Alinea los iconos verticalmente */
+    font-size: 24px; /* Tamaño del icono */
+    margin: 0 15px; /* Espacio entre los iconos */
 }
 
 footer .text-white {
@@ -80,4 +95,50 @@ footer .text-white {
 
 footer div {
     margin-top: 10px; /* Espacio entre el texto y los iconos */
+}
+
+/* Medias queries para hacer la página más responsive */
+@media (max-width: 768px) {
+    /* Ajustes para pantallas pequeñas */
+    .banner {
+        padding: 40px 20px;
+    }
+
+    .image-container {
+        justify-content: center; /* Centra las imágenes en pantallas pequeñas */
+    }
+
+    .image-container img {
+        width: 100%; /* Asegura que las imágenes se adapten al tamaño de la pantalla */
+        max-width: 200px; /* Ajusta el tamaño máximo */
+        margin-bottom: 20px; /* Añade margen entre las imágenes */
+    }
+
+    footer i {
+        font-size: 20px; /* Reduce el tamaño de los iconos en pantallas pequeñas */
+        margin: 0 10px; /* Reduce el espacio entre los iconos */
+    }
+
+    footer {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajustes para dispositivos móviles más pequeños */
+    .small-image {
+        width: 90%; /* Ajusta las imágenes pequeñas en dispositivos móviles */
+    }
+
+    .display-5 {
+        font-size: 1.5rem; /* Reduce el tamaño de texto para dispositivos más pequeños */
+    }
+
+    .lead {
+        font-size: 1rem; /* Ajuste de tamaño de texto */
+    }
+
+    .btn {
+        width: 100%; /* Hace que el botón ocupe todo el ancho disponible en pantallas pequeñas */
+    }
 }
