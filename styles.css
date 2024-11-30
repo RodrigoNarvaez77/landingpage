@@ -36,6 +36,15 @@
     }
 }
 
+@keyframes zincEffect {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 200px 0;
+    }
+}
+
 /* ====================================
    GENERAL
 ==================================== */
@@ -60,19 +69,20 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: black;
+    background: linear-gradient(90deg, #b0b0b0 25%, #d3d3d3 50%, #b0b0b0 75%);
+    background-size: 200px 100%; /* Tamaño del patrón */
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
+    animation: zincEffect 3s linear infinite; /* Movimiento dinámico */
 }
 
 #preloader span {
     color: white;
-    font-size: 4em; /* Tamaño de las letras */
-    display: inline-block;
-    opacity: 0;
-    transform: scale(0.8); /* Comienza más pequeño */
+    font-size: 4em;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     animation: letterFade 1s ease forwards;
 }
 
@@ -91,10 +101,10 @@ body {
    CONTENIDO PRINCIPAL
 ==================================== */
 #main-content {
-    opacity: 0; /* Comienza invisible */
-    visibility: hidden; /* Oculta contenido mientras el preloader está activo */
-    transition: opacity 0.5s ease-in-out; /* Transición suave */
-    background-color: white; /* Fondo blanco para evitar negro persistente */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out;
+    background-color: white;
 }
 
 /* ====================================
@@ -105,12 +115,12 @@ body {
     background-size: cover;
     background-position: center;
     color: #333;
-    padding: 60px 20px; /* Añadido padding para un mejor espaciado */
+    padding: 60px 20px;
     text-align: center;
 }
 
 .features {
-    background-color: white; /* Fondo blanco para esta sección */
+    background-color: white;
     padding: 2rem 0;
 }
 
@@ -119,65 +129,72 @@ body {
 }
 
 .full-width-image {
-    width: 100%; /* Contenedor al ancho completo */
-    height: 600px; /* Aumento la altura del contenedor */
+    width: 100%;
+    height: 600px;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Oculta cualquier desbordamiento */
+    overflow: hidden;
 }
 
 .full-width-image img {
-    width: 100%; /* Imagen al ancho completo */
-    height: 100%; /* Ajusta la altura al 100% del contenedor */
-    object-fit: cover; /* Rellena el contenedor sin deformar la imagen */
-    display: block; /* Evita espacios adicionales */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .small-image {
-    width: 80%; /* Ajusta el tamaño de la imagen al 80% del contenedor */
-    max-width: 250px; /* Limita el tamaño máximo de la imagen */
-    height: auto; /* Mantiene la proporción de la imagen */
-    display: block; /* Elimina cualquier espacio en blanco debajo de la imagen */
-    margin: 0 auto; /* Centra la imagen */
+    width: 80%;
+    max-width: 250px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .image-container {
-    display: flex; /* Alinea las imágenes horizontalmente */
-    justify-content: space-between; /* Espacio entre las imágenes */
-    gap: 10px; /* Espacio entre las imágenes */
-    flex-wrap: wrap; /* Permite que las imágenes se acomoden en filas en pantallas pequeñas */
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .image-container img {
-    width: 300px; /* Establece el tamaño de las imágenes */
-    height: auto; /* Mantiene la proporción de las imágenes */
-    display: block; /* Elimina el espacio blanco debajo de las imágenes */
-    margin: 0 auto; /* Centra las imágenes */
+    width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-container img:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* ====================================
    FOOTER
 ==================================== */
 footer {
-    background-color: #333; /* Fondo oscuro para el footer */
+    background-color: #333;
     color: white;
-    text-align: center; 
+    text-align: center;
     padding: 20px;
-    margin-top: 40px; /* Espacio superior */
+    margin-top: 40px;
 }
 
 footer i {
-    vertical-align: middle; /* Alinea los iconos verticalmente */
-    font-size: 24px; /* Tamaño del icono */
-    margin: 0 15px; /* Espacio entre los iconos */
+    vertical-align: middle;
+    font-size: 24px;
+    margin: 0 15px;
 }
 
 footer .text-white {
-    text-decoration: none; /* Elimina subrayado de los enlaces */
+    text-decoration: none;
 }
 
 footer div {
-    margin-top: 10px; /* Espacio entre el texto y los iconos */
+    margin-top: 10px;
 }
 
 /* ====================================
@@ -189,18 +206,18 @@ footer div {
     }
 
     .image-container {
-        justify-content: center; /* Centra las imágenes en pantallas pequeñas */
+        justify-content: center;
     }
 
     .image-container img {
-        width: 100%; /* Asegura que las imágenes se adapten al tamaño de la pantalla */
-        max-width: 200px; /* Ajusta el tamaño máximo */
-        margin-bottom: 20px; /* Añade margen entre las imágenes */
+        width: 100%;
+        max-width: 200px;
+        margin-bottom: 20px;
     }
 
     footer i {
-        font-size: 20px; /* Reduce el tamaño de los iconos en pantallas pequeñas */
-        margin: 0 10px; /* Reduce el espacio entre los iconos */
+        font-size: 20px;
+        margin: 0 10px;
     }
 
     footer {
@@ -226,35 +243,23 @@ footer div {
     }
 }
 
-
 /* ====================================
-   ESTILO PARA IMÁGENES
+   ESTILO PARA BOTONES
 ==================================== */
-img {
-    border-radius: 15px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación */
-}
-
-img:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más fuerte */
-}
-
-/* Estilo del botón de cotización personalizada */
 .btn-primary {
-    background-color: #007bff; /* Azul predeterminado */
+    background-color: #007bff;
     color: white;
     border: none;
     padding: 10px 20px;
-    border-radius: 6px; /* Bordes redondeados */
-    text-transform: uppercase; /* Texto en mayúsculas */
-    font-weight: bold; /* Negrita */
-    letter-spacing: 0.5px; /* Espaciado entre letras */
-    transition: all 0.3s ease; /* Transición suave */
+    border-radius: 6px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-    background-color: #0056b3; /* Azul más oscuro en hover */
-    transform: scale(1.05); /* Ligeramente más grande */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
