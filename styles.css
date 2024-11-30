@@ -1,4 +1,6 @@
-/* Animaciones */
+/* ====================================
+   ANIMACIONES
+==================================== */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -8,10 +10,6 @@
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.fade-in {
-    animation: fadeIn 1s ease-in-out;
 }
 
 @keyframes fadeOut {
@@ -38,14 +36,70 @@
     }
 }
 
-/* Ajustes generales */
+/* ====================================
+   GENERAL
+==================================== */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     overflow: hidden; /* Evita scroll durante el preloader */
+    background-color: black; /* Fondo negro para evitar parpadeos blancos */
 }
 
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* ====================================
+   PRELOADER
+==================================== */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#preloader span {
+    color: white;
+    font-size: 4em; /* Tamaño de las letras */
+    display: inline-block;
+    opacity: 0;
+    transform: scale(0.8); /* Comienza más pequeño */
+    animation: letterFade 1s ease forwards;
+}
+
+#preloader span:nth-child(1) { animation-delay: 0.1s; }
+#preloader span:nth-child(2) { animation-delay: 0.2s; }
+#preloader span:nth-child(3) { animation-delay: 0.3s; }
+#preloader span:nth-child(4) { animation-delay: 0.4s; }
+#preloader span:nth-child(5) { animation-delay: 0.5s; }
+#preloader span:nth-child(6) { animation-delay: 0.6s; }
+#preloader span:nth-child(7) { animation-delay: 0.7s; }
+#preloader span:nth-child(8) { animation-delay: 0.8s; }
+#preloader span:nth-child(9) { animation-delay: 0.9s; }
+#preloader span:nth-child(10) { animation-delay: 1s; }
+
+/* ====================================
+   CONTENIDO PRINCIPAL
+==================================== */
+#main-content {
+    opacity: 0; /* Comienza invisible */
+    visibility: hidden; /* Oculta contenido mientras el preloader está activo */
+    transition: opacity 0.5s ease-in-out; /* Transición suave */
+    background-color: white; /* Fondo blanco para evitar negro persistente */
+}
+
+/* ====================================
+   SECCIONES Y ELEMENTOS
+==================================== */
 .banner {
     background-image: url('irrigation-project.jpg');
     background-size: cover;
@@ -55,11 +109,15 @@ body {
     text-align: center;
 }
 
+.features {
+    background-color: white; /* Fondo blanco para esta sección */
+    padding: 2rem 0;
+}
+
 .feature-item {
     margin-top: 20px;
 }
 
-/* Imagen de fondo */
 .full-width-image {
     width: 100%; /* Contenedor al ancho completo */
     height: 600px; /* Aumento la altura del contenedor */
@@ -75,7 +133,6 @@ body {
     display: block; /* Evita espacios adicionales */
 }
 
-/* Ajuste de imagen pequeña */
 .small-image {
     width: 80%; /* Ajusta el tamaño de la imagen al 80% del contenedor */
     max-width: 250px; /* Limita el tamaño máximo de la imagen */
@@ -84,7 +141,6 @@ body {
     margin: 0 auto; /* Centra la imagen */
 }
 
-/* Contenedor de imágenes */
 .image-container {
     display: flex; /* Alinea las imágenes horizontalmente */
     justify-content: space-between; /* Espacio entre las imágenes */
@@ -99,7 +155,9 @@ body {
     margin: 0 auto; /* Centra las imágenes */
 }
 
-/* Footer */
+/* ====================================
+   FOOTER
+==================================== */
 footer {
     background-color: #333; /* Fondo oscuro para el footer */
     color: white;
@@ -122,46 +180,9 @@ footer div {
     margin-top: 10px; /* Espacio entre el texto y los iconos */
 }
 
-/* Preloader */
-#preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-#preloader span {
-    color: white;
-    font-size: 4em;
-    display: inline-block;
-    opacity: 0;
-    transform: scale(0.8);
-    animation: letterFade 1s ease forwards;
-}
-
-#preloader span:nth-child(1) { animation-delay: 0.1s; }
-#preloader span:nth-child(2) { animation-delay: 0.2s; }
-#preloader span:nth-child(3) { animation-delay: 0.3s; }
-#preloader span:nth-child(4) { animation-delay: 0.4s; }
-#preloader span:nth-child(5) { animation-delay: 0.5s; }
-#preloader span:nth-child(6) { animation-delay: 0.6s; }
-#preloader span:nth-child(7) { animation-delay: 0.7s; }
-#preloader span:nth-child(8) { animation-delay: 0.8s; }
-#preloader span:nth-child(9) { animation-delay: 0.9s; }
-#preloader span:nth-child(10) { animation-delay: 1s; }
-#preloader span:nth-child(11) { animation-delay: 1.1s; }
-
-#main-content {
-    display: none;
-}
-
-/* Media queries */
+/* ====================================
+   MEDIA QUERIES
+==================================== */
 @media (max-width: 768px) {
     .banner {
         padding: 40px 20px;
