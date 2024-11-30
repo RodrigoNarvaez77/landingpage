@@ -277,3 +277,63 @@ footer div {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+
+/* ====================================
+   BUTTON CONTAINER
+==================================== */
+
+.button-container {
+    display: flex; /* Alinea los botones en fila */
+    justify-content: center; /* Centra los botones */
+    gap: 30px; /* Aumenta el espacio entre los botones */
+    flex-wrap: wrap; /* Permite que se reorganicen en filas en pantallas pequeñas */
+}
+
+.button-container .btn {
+    display: inline-flex; /* Mantiene el tamaño del botón */
+    align-items: center; /* Centra el contenido verticalmente */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 0.875rem; /* Tamaño del texto */
+    border-radius: 50px; /* Hace los botones redondeados */
+    text-align: center; /* Centra el texto */
+    transition: all 0.3s ease; /* Suaviza las transiciones */
+    font-family: Arial, sans-serif; /* Mantiene la misma fuente */
+    font-weight: bold; /* Resalta el texto */
+    letter-spacing: 0.5px; /* Espaciado entre letras */
+    text-transform: capitalize; /* Formato de texto: Capitalizar cada palabra */
+}
+
+/* Ajuste del icono */
+.button-container .btn i {
+    font-size: 18px; /* Tamaño del icono */
+    margin-right: 8px; /* Espaciado entre el icono y el texto */
+}
+
+/* Hover Effect */
+.button-container .btn:hover {
+    transform: scale(1.05); /* Efecto de zoom suave al pasar el mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra ligera */
+}
+
+/* Botón de WhatsApp (verde) */
+.button-container .btn-success {
+    background-color: #28a745; /* Color verde */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+}
+
+.button-container .btn-success:hover {
+    background-color: #218838; /* Verde más oscuro en hover */
+}
+
+/* Botón de cotización (azul) */
+.button-container .btn-primary {
+    background-color: #007bff; /* Color azul */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+}
+
+.button-container .btn-primary:hover {
+    background-color: #0056b3; /* Azul más oscuro en hover */
+}
