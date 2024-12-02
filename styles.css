@@ -154,7 +154,7 @@ body {
 ==================================== */
 .full-width-image {
     width: 100%;
-    height: 100vh; /* Asegura que la imagen cubra toda la altura de la pantalla en pantallas grandes */
+    min-height: 100vh; /* Asegura que la imagen cubra toda la altura de la pantalla */
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -168,6 +168,9 @@ body {
     position: relative; /* Para que el overlay pueda ser posicionado encima */
     width: 100%;
     height: 100%; /* La imagen de fondo cubre todo el contenedor */
+    display: flex; /* Asegura que la imagen y el formulario se ajusten correctamente */
+    justify-content: center; /* Centra el formulario dentro del contenedor */
+    align-items: center; /* Centra verticalmente el formulario */
 }
 
 .overlay {
@@ -183,6 +186,7 @@ body {
     width: 90%;
     max-width: 400px; /* Máximo tamaño para el formulario */
     text-align: center;
+    z-index: 10; /* Asegura que el formulario esté encima de la imagen */
 }
 
 .overlay h2 {
@@ -216,23 +220,25 @@ body {
 ==================================== */
 @media (max-width: 768px) {
     .full-width-image {
-        height: 60vh; /* Ajusta la altura de la imagen en pantallas medianas */
+        min-height: 60vh; /* Ajusta la imagen a la mitad de la altura en pantallas medianas */
         object-fit: cover; /* Asegura que la imagen cubra el contenedor */
     }
 
     .overlay {
         width: 80%; /* Reduce el tamaño del formulario en pantallas medianas */
+        padding: 20px; /* Ajusta el padding en pantallas medianas */
     }
 }
 
 @media (max-width: 480px) {
     .full-width-image {
-        height: 60vh; /* Ajusta la imagen en pantallas pequeñas (modo retrato) */
+        min-height: 60vh; /* Ajusta la imagen en pantallas pequeñas (modo retrato) */
         object-fit: cover; /* Asegura que la imagen no se deforme */
     }
 
     .overlay {
         width: 90%; /* Asegura que el formulario ocupe el 90% en pantallas pequeñas */
+        padding: 15px; /* Ajusta el padding en pantallas pequeñas */
     }
 }
 /* ====================================
