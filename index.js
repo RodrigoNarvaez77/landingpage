@@ -20,3 +20,21 @@ function preloader(){
 }
 
 preloader()
+
+function wathsapp(){
+    const whatsappButton = document.getElementById('whatsappButton');
+    const whatsappMenu = document.getElementById('whatsappMenu');
+
+    whatsappButton.addEventListener('click', () => {
+        whatsappMenu.classList.toggle('active'); // Alterna la clase "active" para mostrar/ocultar
+    });
+
+    // Opcional: Cierra el menú si se hace clic fuera de él
+    document.addEventListener('click', (event) => {
+        if (!whatsappMenu.contains(event.target) && !whatsappButton.contains(event.target)) {
+            whatsappMenu.classList.remove('active');
+        }
+    });
+}
+
+wathsapp()
