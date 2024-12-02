@@ -149,42 +149,90 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* ====================================
+   FULL-WIDTH IMAGE
+==================================== */
 .full-width-image {
     width: 100%;
-    height: 600px;
+    height: 100vh; /* Ajusta la imagen para que cubra toda la altura de la pantalla */
     margin: 0;
     padding: 0;
     overflow: hidden;
+    object-fit: cover; /* Hace que la imagen cubra el contenedor sin distorsionarse */
 }
 
-.full-width-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
+/* ================================
+   Ajustes para el contenedor de la imagen con el formulario
+==================================== */
 .image-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    flex-wrap: wrap;
+    position: relative; /* Para que el overlay pueda ser posicionado encima */
+    width: 100%;
+    height: 100%; /* La imagen de fondo cubre todo el contenedor */
 }
 
-.image-container img {
-    width: 300px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.overlay {
+    position: absolute;
+    top: 50%; /* Centra el formulario verticalmente */
+    left: 20px; /* Ajusta el contenido a la izquierda */
+    transform: translateY(-50%); /* Compensa el desplazamiento */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px; /* Máximo tamaño para el formulario */
+    text-align: center;
 }
 
-.image-container img:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.overlay h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
+.cotizacion-form .form-control {
+    border-radius: 5px;
+    margin-bottom: 15px; /* Espaciado entre los campos */
+}
+
+.cotizacion-form .btn {
+    width: 100%; /* El botón ocupa todo el ancho */
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cotizacion-form .btn:hover {
+    background-color: #0056b3;
+}
+
+/* ====================================
+   MEDIA QUERIES PARA RESPONSIVIDAD
+==================================== */
+@media (max-width: 768px) {
+    .full-width-image {
+        height: 50vh; /* Ajusta la altura de la imagen en pantallas medianas */
+    }
+
+    .overlay {
+        width: 80%; /* Reduce el tamaño del formulario en pantallas medianas */
+    }
+}
+
+@media (max-width: 480px) {
+    .full-width-image {
+        height: 40vh; /* Ajusta la altura de la imagen en pantallas pequeñas */
+    }
+
+    .overlay {
+        width: 90%; /* Asegura que el formulario ocupe el 90% en pantallas pequeñas */
+    }
+}
 /* ====================================
    FOOTER
 ==================================== */
@@ -546,5 +594,54 @@ footer div {
     .navbar-brand h1 {
         font-size: 1.2rem; /* Reducir aún más en pantallas muy pequeñas */
         letter-spacing: 0.8px;
+    }
+}
+
+/* ====================================
+   SECCIÓN DE IMÁGENES DE PROYECTOS
+==================================== */
+.project-images {
+    display: flex; /* Para alinear las imágenes horizontalmente */
+    justify-content: center; /* Centra las imágenes en el contenedor */
+    gap: 15px; /* Espacio entre las imágenes */
+    flex-wrap: wrap; /* Permite que las imágenes se ajusten si es necesario */
+    padding: 20px;
+}
+
+.project-images img {
+    width: 100%; /* Hace que las imágenes se ajusten al 100% de su contenedor */
+    max-width: 250px; /* Tamaño máximo de las imágenes */
+    height: auto; /* Mantiene la proporción de las imágenes */
+    display: block; /* Elimina cualquier espacio en blanco debajo de la imagen */
+    margin: 0 auto; /* Centra las imágenes */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación al pasar el mouse */
+}
+
+.project-images img:hover {
+    transform: scale(1.05); /* Efecto de zoom */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+}
+
+/* ====================================
+   MEDIA QUERIES PARA RESPONSIVIDAD
+==================================== */
+@media (max-width: 768px) {
+    .project-images {
+        justify-content: center;
+    }
+
+    .project-images img {
+        width: 100%;
+        max-width: 200px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-images img {
+        width: 100%;
+        max-width: 150px;
     }
 }
