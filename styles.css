@@ -522,3 +522,29 @@ footer div {
         width: 90%; /* Asegura que ocupe el 90% del contenedor en pantallas muy pequeñas */
     }
 }
+
+/* ====================================
+   NAVBAR
+==================================== */
+.navbar-brand h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    .navbar-brand h1 {
+        font-size: 1.4rem; /* Reducir tamaño en pantallas más pequeñas */
+        letter-spacing: 1px; /* Menos espacio entre las letras */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-brand h1 {
+        font-size: 1.2rem; /* Reducir aún más en pantallas muy pequeñas */
+        letter-spacing: 0.8px;
+    }
+}
