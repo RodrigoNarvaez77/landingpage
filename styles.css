@@ -336,4 +336,124 @@ footer div {
 
 .button-container .btn-primary:hover {
     background-color: #0056b3; /* Azul más oscuro en hover */
+
 }
+
+
+/* ====================================
+   WhatsApp
+==================================== */
+
+/* Botón flotante de WhatsApp */
+.whatsapp-menu {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.btn-whatsapp {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #25d366;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.whatsapp-options {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.whatsapp-options a {
+    text-decoration: none;
+    color: #25d366;
+    padding: 10px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.whatsapp-options a:last-child {
+    border-bottom: none;
+}
+
+.btn-whatsapp:focus + .whatsapp-options,
+.whatsapp-options:hover {
+    display: flex;
+}
+
+.linktree {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    z-index: 1000;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.linktree.active {
+    display: block; /* Visible cuando tiene la clase "active" */
+}
+
+.list-group-item {
+    border: none; /* Sin borde entre elementos */
+    padding: 15px;
+    transition: background-color 0.2s ease;
+}
+
+.list-group-item:hover {
+    background-color: #f1f1f1; /* Fondo claro al pasar el mouse */
+}
+
+.branch-name {
+    margin: 0;
+    font-weight: bold;
+    color: #333; /* Texto oscuro */
+}
+
+.branch-address {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666; /* Texto más claro */
+}
+
+.btn-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    transition: transform 0.3s ease;
+}
+
+.btn-circle:hover {
+    transform: scale(1.1); /* Efecto de zoom */
+}
+
