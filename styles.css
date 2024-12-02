@@ -154,23 +154,23 @@ body {
 ==================================== */
 .full-width-image {
     width: 100%;
-    min-height: 100vh; /* Asegura que la imagen cubra toda la altura de la pantalla */
+    height: 100vh; /* Hace que la imagen ocupe toda la altura de la pantalla */
     margin: 0;
     padding: 0;
     overflow: hidden;
-    object-fit: cover; /* Hace que la imagen cubra el contenedor sin distorsionarse */
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin dejar espacios vacíos */
 }
 
 /* ================================
    Ajustes para el contenedor de la imagen con el formulario
 ==================================== */
 .image-container {
-    position: relative; /* Para que el overlay pueda ser posicionado encima */
+    position: relative;
     width: 100%;
     height: 100%; /* La imagen de fondo cubre todo el contenedor */
-    display: flex; /* Asegura que la imagen y el formulario se ajusten correctamente */
-    justify-content: center; /* Centra el formulario dentro del contenedor */
-    align-items: center; /* Centra verticalmente el formulario */
+    display: flex;
+    justify-content: center; /* Centra el contenido (el formulario) horizontalmente */
+    align-items: center; /* Centra el contenido (el formulario) verticalmente */
 }
 
 .overlay {
@@ -220,25 +220,23 @@ body {
 ==================================== */
 @media (max-width: 768px) {
     .full-width-image {
-        min-height: 60vh; /* Ajusta la imagen a la mitad de la altura en pantallas medianas */
-        object-fit: cover; /* Asegura que la imagen cubra el contenedor */
+        height: 60vh; /* Ajusta la imagen a la mitad de la altura en pantallas medianas */
+        object-fit: cover; /* Asegura que la imagen ocupe todo el contenedor */
     }
 
     .overlay {
         width: 80%; /* Reduce el tamaño del formulario en pantallas medianas */
-        padding: 20px; /* Ajusta el padding en pantallas medianas */
     }
 }
 
 @media (max-width: 480px) {
     .full-width-image {
-        min-height: 60vh; /* Ajusta la imagen en pantallas pequeñas (modo retrato) */
-        object-fit: cover; /* Asegura que la imagen no se deforme */
+        height: 60vh; /* Ajusta la imagen en pantallas pequeñas (modo retrato) */
+        object-fit: cover; /* Asegura que la imagen ocupe todo el contenedor */
     }
 
     .overlay {
         width: 90%; /* Asegura que el formulario ocupe el 90% en pantallas pequeñas */
-        padding: 15px; /* Ajusta el padding en pantallas pequeñas */
     }
 }
 /* ====================================
