@@ -604,32 +604,40 @@ footer div {
 }
 
 /* ====================================
-   SECCIÓN DE IMÁGENES DE PROYECTOS
+   SECCIÓN DE IMÁGENES DE SERVICIOS
 ==================================== */
 .project-images {
-    display: flex; /* Para alinear las imágenes horizontalmente */
-    justify-content: center; /* Centra las imágenes en el contenedor */
-    gap: 15px; /* Espacio entre las imágenes */
-    flex-wrap: wrap; /* Permite que las imágenes se ajusten si es necesario */
-    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* Controla la separación entre las imágenes */
+    flex-wrap: wrap; /* Permite que las imágenes bajen a otra fila si no hay espacio */
 }
 
-.project-images img {
-    width: 100%; /* Hace que las imágenes se ajusten al 100% de su contenedor */
-    max-width: 250px; /* Tamaño máximo de las imágenes */
-    height: auto; /* Mantiene la proporción de las imágenes */
-    display: block; /* Elimina cualquier espacio en blanco debajo de la imagen */
-    margin: 0 auto; /* Centra las imágenes */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación al pasar el mouse */
+.project-img {
+    width: 100%; /* Por defecto, la imagen ocupa todo el contenedor */
+    max-width: 400px; /* Limita el tamaño máximo de la imagen */
+    height: auto;
+    object-fit: cover; /* Asegura que las imágenes no se deformen */
+    border-radius: 15px; /* Bordes redondeados */
+    transition: transform 0.3s ease; /* Efecto suave en hover */
 }
 
-.project-images img:hover {
-    transform: scale(1.05); /* Efecto de zoom */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+.project-img:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
 }
 
+/* Ajuste para pantallas móviles */
+@media (max-width: 768px) {
+    .project-images {
+        flex-direction: column; /* Cambia la dirección a vertical */
+        gap: 1.5rem; /* Aumenta la separación entre las imágenes */
+    }
+
+    .project-img {
+        max-width: 100%; /* Asegura que las imágenes ocupen todo el ancho disponible */
+    }
+}
 /* ====================================
    MEDIA QUERIES PARA RESPONSIVIDAD
 ==================================== */
