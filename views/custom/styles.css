@@ -75,33 +75,46 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    animation: zincEffect 3s linear infinite;
     overflow: hidden;
 }
 
-#preloader span {
-    color: white;
-    font-size: 4em;
-    font-weight: bold;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    animation: letterFade 1s ease forwards;
+#preloader img#logo {
+    width: 300px; /* Ajusta el tamaño del logo */
+    animation: fadeInOut 3s ease forwards; /* Dura 3 segundos y luego desaparece */
+}
+
+/* ====================================
+   ANIMACIONES
+==================================== */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
 }
 
 /* ====================================
    MEDIA QUERIES PARA RESPONSIVIDAD
 ==================================== */
 @media (max-width: 768px) {
-    #preloader span {
-        font-size: 3em;
+    #preloader img#logo {
+        width: 150px;
     }
 }
 
 @media (max-width: 480px) {
-    #preloader span {
-        font-size: 2.5em;
+    #preloader img#logo {
+        width: 120px;
     }
 }
-
 /* ====================================
    CONTENIDO PRINCIPAL
 ==================================== */
@@ -387,9 +400,8 @@ footer div {
     background-color: #0056b3;
 }
 
-
 /* ====================================
-   WhatsApp
+   WhatsApp Mejorado con Fondo Destacado
 ==================================== */
 
 .whatsapp-menu {
@@ -397,6 +409,9 @@ footer div {
     bottom: 20px;
     right: 20px;
     z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .btn-whatsapp {
@@ -410,82 +425,70 @@ footer div {
     align-items: center;
     color: white;
     font-size: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .btn-whatsapp:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-.whatsapp-options {
-    display: none;
-    flex-direction: column;
-    background-color: white;
-    position: absolute;
-    bottom: 70px;
-    right: 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.whatsapp-options a {
-    text-decoration: none;
-    color: #25d366;
-    padding: 10px 15px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-    font-size: 14px;
-}
-
-.whatsapp-options a:last-child {
-    border-bottom: none;
-}
-
-.btn-whatsapp:focus + .whatsapp-options,
-.whatsapp-options:hover {
-    display: flex;
+    transform: scale(1.2) rotate(10deg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    background-color: #1ebe5a;
 }
 
 .linktree {
     display: none;
     position: fixed;
-    bottom: 80px;
+    bottom: 90px;
     right: 20px;
     width: 300px;
     z-index: 1000;
-    background-color: #f8f9fa;
-    border: 1px solid #ddd;
+    background: linear-gradient(135deg, #25d366, #128c7e); /* Degradado en el fondo */
+    border: none;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
     overflow: hidden;
+    animation: slideIn 0.3s ease forwards;
 }
 
 .linktree.active {
     display: block;
+    opacity: 1;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .list-group-item {
     border: none;
     padding: 15px;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    background-color: transparent; /* Fondo transparente */
+    color: white; /* Texto blanco para contraste */
 }
 
 .list-group-item:hover {
-    background-color: #f1f1f1;
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo con transparencia al hover */
+    transform: scale(1.02);
 }
 
 .branch-name {
     margin: 0;
     font-weight: bold;
-    color: #333;
+    color: white; /* Texto blanco */
 }
 
 .branch-address {
     margin: 0;
     font-size: 0.9rem;
-    color: #666;
+    color: #e1e1e1; /* Gris claro para contraste */
 }
 
 .btn-circle {
@@ -496,12 +499,15 @@ footer div {
     height: 40px;
     border-radius: 50%;
     font-size: 18px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white; /* Botones con fondo blanco */
+    color: #25d366; /* Icono verde */
 }
 
 .btn-circle:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 /* ====================================
@@ -689,4 +695,43 @@ footer div {
 .notification.show {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* ====================================
+   Letra cuerpo
+==================================== */
+
+.custom-title {
+    font-size: 1.5rem; /* Tamaño más pequeño */
+    font-family: 'Georgia', serif; /* Fuente elegante */
+    font-weight: 400; /* Peso más ligero */
+    color: #555; /* Color gris suave */
+    line-height: 1.4; /* Espaciado entre líneas */
+    text-align: center; /* Centrado opcional */
+}
+
+/* ====================================
+   Letra para Títulos Principales
+==================================== */
+
+.custom-title-large {
+    font-size: 2.5rem; /* Tamaño más grande */
+    font-family: 'Georgia', serif; /* Fuente elegante */
+    font-weight: 10; /* Peso más destacado */
+    color: #333; /* Color más oscuro */
+    line-height: 1.2; /* Espaciado entre líneas */
+    text-align: center; /* Centrado opcional */
+}
+
+/* ====================================
+   Letra para Textos Pequeños
+==================================== */
+
+.custom-text-small {
+    font-size: 0.875rem; /* Tamaño pequeño */
+    font-family: 'Georgia', serif; /* Fuente elegante */
+    font-weight: 300; /* Peso ligero */
+    color: #666; /* Color gris suave */
+    line-height: 1.6; /* Espaciado amplio entre líneas */
+    text-align: center; /* Alineado a la izquierda por defecto */
 }
