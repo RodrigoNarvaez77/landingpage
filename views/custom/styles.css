@@ -1,3 +1,11 @@
+/* ==================================================
+  Fuerza el scrollbar incluso cuando no hay contenido
+===================================================== */
+
+html {
+    overflow-y: scroll;
+  }
+
 /* ====================================
    ANIMACIONES
 ==================================== */
@@ -69,8 +77,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, #b0b0b0 25%, #d3d3d3 50%, #b0b0b0 75%);
-    background-size: 200px 100%;
+    background: url('../images/pt40.png') no-repeat center center; /* la ruta de tu imagen */
+    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -126,6 +134,14 @@ body {
 }
 
 /* ====================================
+   CONTENIDO SECUNDARIO
+==================================== */
+#main-content2 {
+    background-color: white;
+}
+
+
+/* ====================================
    SECCIONES Y ELEMENTOS
 ==================================== */
 .banner {
@@ -164,7 +180,7 @@ body {
 
 /* ====================================
    FULL-WIDTH IMAGE
-==================================== */
+======================================= */
 .full-width-image {
     width: 100%;
     min-height: 100vh; /* Asegura que la imagen cubra toda la altura de la pantalla */
@@ -174,47 +190,68 @@ body {
     object-fit: cover; /* Asegura que la imagen cubra el contenedor sin dejar espacios vacíos */
 }
 
-/* ================================
-   Ajustes para el contenedor de la imagen con el formulario
-==================================== */
+/*===========================================================================
+   Ajustes para el contenedor de la imagen con el formulario image container
+============================================================================= */
+/* Contenedor Principal */
 .image-container {
-    position: relative; /* Para que el overlay pueda ser posicionado encima */
-    width: 100%;
-    height: 100%; /* La imagen de fondo cubre todo el contenedor */
-    display: flex;
-    justify-content: center; /* Centra el contenido (el formulario) horizontalmente */
-    align-items: center; /* Centra el contenido (el formulario) verticalmente */
+    position: relative; /* Permite posicionar el overlay encima */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    height: 100vh; /* Altura completa de la pantalla */
+    overflow: hidden; /* Evita desbordamientos */
+    display: flex; /* Centra el contenido dentro del contenedor */
+    justify-content: center;
+    align-items: center;
+    background-color: #000; /* Fondo de seguridad */
 }
 
+/* Imagen de Fondo */
+.image-container img {
+    position: absolute; /* La imagen actúa como fondo */
+    top: 0;
+    left: 0;
+    min-width: 100%; /* La imagen debe llenar al menos el ancho del contenedor */
+    min-height: 100%; /* La imagen debe llenar al menos la altura del contenedor */
+    object-fit: cover; /* Asegura que la imagen cubra todo el espacio sin deformarse */
+    z-index: 1; /* La imagen queda detrás del contenido */
+}
+
+/* Overlay (Formulario) */
 .overlay {
     position: absolute;
     top: 50%; /* Centra el formulario verticalmente */
-    left: 20px; /* Ajusta el contenido a la izquierda */
-    transform: translateY(-50%); /* Compensa el desplazamiento */
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    left: 50%; /* Centra el formulario horizontalmente */
+    transform: translate(-50%, -50%); /* Centra perfectamente el formulario */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
     color: white;
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    width: 90%;
-    max-width: 400px; /* Máximo tamaño para el formulario */
-    text-align: center;
-    z-index: 10; /* Asegura que el formulario esté encima de la imagen */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para destacar */
+    width: 90%; /* Ancho relativo */
+    max-width: 400px;
+    text-align: center; /* Centra el texto */
+    z-index: 10; /* El formulario queda encima de la imagen */
 }
 
+/* Títulos del Formulario */
 .overlay h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
+    font-size: 1.8rem; /* Tamaño de fuente del título */
+    margin-bottom: 20px; /* Espaciado debajo del título */
     font-weight: bold;
 }
 
+/* Campos del Formulario */
 .cotizacion-form .form-control {
+    width: 100%; /* Asegura que los campos ocupen todo el ancho */
     border-radius: 5px;
     margin-bottom: 15px; /* Espaciado entre los campos */
+    padding: 10px;
+    font-size: 1rem;
 }
 
+/* Botón del Formulario */
 .cotizacion-form .btn {
-    width: 100%; /* El botón ocupa todo el ancho */
+    width: 100%;
     background-color: #007bff;
     color: white;
     font-weight: bold;
@@ -225,33 +262,33 @@ body {
 }
 
 .cotizacion-form .btn:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Efecto hover */
 }
 
-/* ====================================
-   MEDIA QUERIES PARA RESPONSIVIDAD
-==================================== */
+/* Responsivo */
 @media (max-width: 768px) {
-    .full-width-image {
-        min-height: 80vh; /* Ajusta la imagen a la altura de la pantalla en pantallas medianas */
-        object-fit: cover; /* Asegura que la imagen ocupe todo el contenedor */
+    .overlay {
+        width: 90%;
+        padding: 20px;
     }
 
-    .overlay {
-        width: 80%; /* Reduce el tamaño del formulario en pantallas medianas */
+    .overlay h2 {
+        font-size: 1.5rem;
     }
 }
 
 @media (max-width: 480px) {
-    .full-width-image {
-        min-height: 70vh; /* Ajusta la imagen a la altura de la pantalla en pantallas más pequeñas */
-        object-fit: cover; /* Asegura que la imagen ocupe todo el contenedor */
+    .overlay {
+        width: 95%;
+        padding: 15px;
     }
 
-    .overlay {
-        width: 90%; /* Asegura que el formulario ocupe el 90% en pantallas pequeñas */
+    .overlay h2 {
+        font-size: 1.3rem;
     }
 }
+
+
 /* ====================================
    FOOTER
 ==================================== */
@@ -735,3 +772,5 @@ footer div {
     line-height: 1.6; /* Espaciado amplio entre líneas */
     text-align: center; /* Alineado a la izquierda por defecto */
 }
+
+

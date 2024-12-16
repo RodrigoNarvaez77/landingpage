@@ -50,34 +50,32 @@
                 </div>
             </nav>
         </header>
-         <!-- Notificacion -->
+         <!-- Notificacion de envio de formulario -->
         <div id="notification" class="notification hidden"></div>
          <!-- Section del form -->
-        <section class="full-width-image">
-            <div class="image-container">
-                <img src="./images/fotoedificio.png" alt="sucursales">
-                <div class="overlay">
-                    <h2>Solicita una Cotización</h2>
-                    <form id="contactForm" method="POST">
-                        <div class="mb-3">
-                            <label for="nombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Correo Electrónico</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Tu correo electrónico" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="telefono" class="form-label">Teléfono</label>
-                            <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Tu teléfono" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="mensaje" class="form-label">Mensaje</label>
-                            <textarea class="form-control" id="mensaje" name="mensaje" rows="3" placeholder="Detalles de tu consulta" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" id="submit-button">Enviar Cotización</button>
-                    </form>
-                </div>
+         <section class="image-container">
+            <img src="./images/fotoedificio.png" alt="sucursales">
+            <div class="overlay">
+                <h2>Solicita una Cotización</h2>
+                <form id="contactForm" method="POST" class="cotizacion-form">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Tu correo electrónico" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label">Teléfono</label>
+                        <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Tu teléfono" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mensaje" class="form-label">Mensaje</label>
+                        <textarea class="form-control" id="mensaje" name="mensaje" rows="3" placeholder="Detalles de tu consulta" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="submit-button">Enviar Cotización</button>
+                </form>
             </div>
         </section>
         <!-- Campos adicionales -->
