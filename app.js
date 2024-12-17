@@ -4,6 +4,7 @@ const path = require('path');
 const helmet = require('helmet');
 require('dotenv').config(); // Carga las variables de entorno
 const soluRoutes = require('./routes/soluroutes'); // Importa las rutas
+//const assistantRoutes = require('./routes/assistantRoutes');
 const port = process.env.PORT || 3000; // Puerto configurable desde variables de entorno
 
 // Middleware para procesar datos de formularios
@@ -18,6 +19,7 @@ app.use(helmet());
 
 // Configura las rutas
 app.use('/', soluRoutes);
+//app.use('/', assistantRoutes);
 
 // Manejo de rutas no encontradas
 app.use((req, res, next) => {
