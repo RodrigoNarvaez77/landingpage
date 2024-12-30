@@ -87,7 +87,7 @@ body {
 }
 
 #preloader img#logo {
-    width: 300px; /* Ajusta el tamaño del logo */
+    width: 400px; /* Ajusta el tamaño del logo */
     animation: fadeInOut 3s ease forwards; /* Dura 3 segundos y luego desaparece */
 }
 
@@ -218,19 +218,18 @@ body {
 
 /* Overlay (Formulario) */
 .overlay {
-    position: absolute;
-    top: 50%; /* Centra el formulario verticalmente */
-    left: 50%; /* Centra el formulario horizontalmente */
-    transform: translate(-50%, -50%); /* Centra perfectamente el formulario */
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
-    color: white;
-    padding: 30px;
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para destacar */
-    width: 90%; /* Ancho relativo */
-    max-width: 400px;
-    text-align: center; /* Centra el texto */
-    z-index: 10; /* El formulario queda encima de la imagen */
+    position: absolute; /* Permite posicionar el formulario dentro del contenedor */
+    transform: translate(-50%, -50%) !important; /* Centra verticalmente */
+    left: 19% !important; /* Ajusta este valor para mover el formulario hacia la derecha */
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    color: white !important;
+    padding: 30px !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
+    width: 81% !important;
+    max-width: 360px !important;
+    text-align: center !important;
+    z-index: 10 !important;
 }
 
 /* Títulos del Formulario */
@@ -265,29 +264,35 @@ body {
     background-color: #0056b3; /* Efecto hover */
 }
 
-/* Responsivo */
+/* Responsivo para tablets */
 @media (max-width: 768px) {
     .overlay {
-        width: 90%;
-        padding: 20px;
+        left: 50% !important; /* Centra horizontalmente el formulario */
+        transform: translate(-50%, -50%) !important; /* Centra el formulario en ambas direcciones */
+        width: 90% !important; /* Ancho más grande para tablets */
+        max-width: 400px !important; /* Ligeramente más ancho en tablets */
+        padding: 20px !important;
     }
 
     .overlay h2 {
-        font-size: 1.5rem;
+        font-size: 1.5rem; /* Texto más pequeño */
     }
 }
 
+/* Responsivo para móviles */
 @media (max-width: 480px) {
     .overlay {
-        width: 95%;
-        padding: 15px;
+        left: 50% !important; /* Centra horizontalmente el formulario */
+        transform: translate(-50%, -50%) !important; /* Centra el formulario en ambas direcciones */
+        width: 95% !important; /* Ancho casi completo */
+        max-width: 320px !important; /* Más compacto para móviles */
+        padding: 15px !important; /* Reduce el padding */
     }
 
     .overlay h2 {
-        font-size: 1.3rem;
+        font-size: 1.3rem; /* Texto más pequeño */
     }
 }
-
 
 /* ====================================
    FOOTER
