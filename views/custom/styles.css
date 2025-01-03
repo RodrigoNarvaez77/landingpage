@@ -791,3 +791,32 @@ footer div {
   line-height: 1.6; /* Espaciado amplio entre líneas */
   text-align: center; /* Alineado a la izquierda por defecto */
 }
+
+/* ====================================
+   Mapa 
+==================================== */
+/* Contenedor del mapa */
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Ajusta la altura según tu diseño */
+  overflow: hidden; /* Oculta cualquier contenido excedente */
+  border-radius: 15px; /* Esquinas redondeadas para todo el contenedor */
+  transition: transform 0.3s ease; /* Suaviza el efecto de zoom */
+}
+
+/* Efecto de zoom al pasar el cursor */
+.map-container:hover {
+  transform: scale(1.1); /* Aumenta el tamaño del contenedor al 105% */
+}
+
+/* Estilo del iframe (Google Maps) */
+.map-container iframe {
+  position: absolute;
+  top: -70px; /* Mueve el mapa hacia arriba para ocultar la barra negra */
+  left: 0;
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  height: 470px; /* Da espacio extra para el desplazamiento */
+  border-radius: 15px; /* Mantiene las esquinas redondeadas */
+  pointer-events: auto; /* Permite la interacción con el mapa */
+}

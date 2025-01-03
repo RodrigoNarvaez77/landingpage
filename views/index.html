@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ferretería Solucenter</title>
-    <link rel="icon" type="image/png" href="./images/favicon_16x16.png" />
+    <link rel="icon" type="image/png" href="./images/favicon.png" />
     <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -209,26 +209,31 @@
         </div>
       </section>
       <!-- Campos adicionales -->
+
       <section class="features py-5">
         <div class="container">
-          <div class="row text-center">
+          <div class="row text-center align-items-stretch">
             <h3 id="categorias" class="custom-title-large">Categorías</h3>
-            <div class="col-md-4 feature-item fade-in">
+
+            <!-- Columna 1: Productos -->
+            <div class="col-md-4 feature-item fade-in d-flex flex-column">
               <img
                 src="./images/pelotaproductos.png"
-                alt="sucursales"
-                class="img-fluid project-img"
+                alt="Productos"
+                class="img-fluid project-img rounded-element"
               />
               <h3 class="custom-title">Productos</h3>
               <p class="custom-text-small">
                 Amplia gama de herramientas y materiales de construcción.
               </p>
             </div>
-            <div class="col-md-4 feature-item fade-in">
+
+            <!-- Columna 2: Servicios -->
+            <div class="col-md-4 feature-item fade-in d-flex flex-column">
               <img
                 src="./images/servicios.png"
-                alt="sucursales"
-                class="img-fluid project-img"
+                alt="Servicios"
+                class="img-fluid project-img rounded-element"
               />
               <h3 class="custom-title">Servicios</h3>
               <p class="custom-text-small">
@@ -236,15 +241,22 @@
                 Juana.
               </p>
             </div>
-            <div class="col-md-4 feature-item fade-in">
-              <img
-                src="./images/map.png"
-                alt="sucursales"
-                class="img-fluid project-img"
-              />
+
+            <!-- Columna 3: Mapa -->
+            <div class="col-md-4 feature-item fade-in d-flex flex-column">
+              <div class="map-container">
+                <iframe
+                  src="https://www.google.com/maps/d/embed?mid=1zNKJjn5B9lpbGxrwn258gD8XFoZQhkY&ehbc=2E312F"
+                  width="100%"
+                  height="400"
+                  style="border: 0; border-radius: 15px"
+                  allowfullscreen=""
+                  loading="lazy"
+                ></iframe>
+              </div>
               <h3 class="custom-title">Mapa</h3>
               <p class="custom-text-small">
-                Conoce nuestra ubicación en la Region del Bio-Bio.
+                Conoce nuestras sucursales en la Región del Bio-Bío.
               </p>
             </div>
           </div>
